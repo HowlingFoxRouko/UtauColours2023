@@ -330,6 +330,19 @@ namespace UTAUColours2023
             TempoChangeTextBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             TitlebarTextTextBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             previousThemeIndex = themesListBox.SelectedIndex;
+            bool langFolderExists = Directory.Exists("./lang/");
+            if (!langFolderExists)
+            {
+                Directory.CreateDirectory("./lang/");
+                string EnglishIni = "[Language Settings]||languageName=English||languageTag=en-US||[UtauColoursMain]||generateSettingsIniButton=&Generate UTAU settings.ini||TitlebarTextLabel=Titlebar Text:||TempoChangeLabel=Tempo Change Colour||InitialTempoLabel=Initial Tempo Colour||QuarterNoteLineLabel=Quarter Note Line Colour||MeasureLineLabel=Measure Line Colour||PianoRollKeyBlackLabel=Piano Roll Key Colour (Black)||PianoRollKeyWhiteLabel=Piano Roll Key Colour (White)||BlackKeyLabel=Black Key Colour||PitchLineSelectedLabel=Pitch Line Colour (Selection)||RestSelectedLabel=Rest Colour (Selection)||PitchLineDeselectedLabel=Pitch Line Colour (Deselected)||NoteSelectedLabel=Note Colour (Selection)||RestFirstOfSelectedLabel=Rest Colour (First of Selection)||NoteFirstSelectedLabel=Note Colour (First of Selection)||RestDeselectedLabel=Rest Colour (Deselected)||NoteDeselectedLabel=Note Colour (Deselected)||PianoRollNoteDividerLabel=Piano Roll Note Divider Colour||MeasureOctaveTextLabel=Measure/Octave Text Colour||NoteFontSelectedLabel=Note Font Colour (Selected)||NoteFontFirstSelectedLabel=Note Font Colour (First Selected)||NoteFontDeselectedLabel=Note Font Colour (Deselected)||MeasureBackgroundLabel=Measure Background Colour||WhiteKeyLabel=White Key Colour||fileToolStripMenuItem=&File||openSavedThemesListToolStripMenuItem=&Open Saved Themes List...||saveThemesListAsToolStripMenuItem=&Save Theme List As...||exitToolStripMenuItem=E&xit||themeToolStripMenuItem=&Theme||newToolStripMenuItem=&New||duplicateToolStripMenuItem=D&uplicate||renameToolStripMenuItem=Rena&me||deleteToolStripMenuItem=&Delete||initializeToolStripMenuItem=&Initialize||languageToolStripMenuItem=&Language||aboutToolStripMenuItem=&About||PitchLinesCheckBox=Show Pitch Lines||[NewThemeName]||NewThemeName=Name Your Theme||cancelButton=&Cancel||okButton=&Ok||ThemeNameTextbox=Untitled||[About]||About=About||closeAboutButton=&Close||aboutUC2023Label=UTAU Colours 2023 is based%non the original utaucolors program%nby Ameya-P%n%nTranslation, Coding, and Design by HowlingFoxRouko%nIcon by Kotozaki||[Rename]||Rename=Rename||renNewNameLabel=New Theme Name:||renCancelButton=&Cancel||renRenameButton=&Rename||[Dialog]||saveDialogText=You have unsaved changes to the current theme. Save?||saveDialogTitle=Save?||deleteDialogText=This will remove this theme entirely and its values will be lost. This cannot be undone. Do you want to continue?||deleteDialogTitle=Delete||initializeDialogText=You are about to reset the current theme back to the original UTAU settings. Do you wish to continue?||initializeDialogTitle=Initialize||overwriteThemeNameDialogText=This theme already exists. Overwrite?||overwriteThemeNameDialogTitle=Overwrite?";
+                string JapaneseIni = "[Language Settings]||languageName=日本語||languageTag=jp-JP||[UtauColoursMain]||generateSettingsIniButton=UTAUのsettings.iniを生成する (&G)||TitlebarTextLabel=タイトル変更||TempoChangeLabel=テンポ指標テキストの色(変更)||InitialTempoLabel=テンポ指標テキストの色(開始)||QuarterNoteLineLabel=縦線の色(1/4小節)||MeasureLineLabel=縦線の色(1小節)||PianoRollKeyBlackLabel=ロールの色(濃)||PianoRollKeyWhiteLabel=ロールの色(薄)||BlackKeyLabel=黒鍵色||PitchLineSelectedLabel=ピッチカーブの色(選択領域)||RestSelectedLabel=休符の色(選択領域)||PitchLineDeselectedLabel=ピッチカーブの色(通常)||NoteSelectedLabel=音符の色(選択領域)||RestFirstOfSelectedLabel=休符の色(選択トップ)||NoteFirstSelectedLabel=音符の色(選択トップ)||RestDeselectedLabel=休符の色(通常)||NoteDeselectedLabel=音符の色(通常)||PianoRollNoteDividerLabel=ロールの区切り横線||MeasureOctaveTextLabel=文字色||NoteFontSelectedLabel=音符の文字色(選択領域)||NoteFontFirstSelectedLabel=音符の文字色(選択トップ)||NoteFontDeselectedLabel=音符の文字色(通常)||MeasureBackgroundLabel=バック色||WhiteKeyLabel=白鍵色||fileToolStripMenuItem=ファイル(&F)||openSavedThemesListToolStripMenuItem=読み込む(&O)...||saveThemesListAsToolStripMenuItem=名前を付けて保存(&S)...||exitToolStripMenuItem=反映して閉じる(&Q)||themeToolStripMenuItem=テーマ(&T)||newToolStripMenuItem=新規作成(&N)...||duplicateToolStripMenuItem=複製(&C)||renameToolStripMenuItem=名前を変更(&M)...||deleteToolStripMenuItem=削除(&D)||initializeToolStripMenuItem=標準配色にする(&I)||languageToolStripMenuItem=言語(&L)||aboutToolStripMenuItem=UTAU Colours 2023について(&A)||PitchLinesCheckBox=ピッチカーブ線を見せる||[NewThemeName]||NewThemeName=新しいテーマの名前を入ってください||cancelButton=キャンセル(&C)||okButton=受け入る(&O)||ThemeNameTextbox=無題のテーマ||[About]||About=UTAU Colours 2023について||closeAboutButton=閉じる(&C)||aboutUC2023Label=UTAU Colours 2023は飴屋／菖蒲の作者に本物の%nutaucolorsプログラムに基づいています。%n%n翻訳／コードする／設計の作手：HowlingFoxRouko%nロゴのイラストと設計作者： Kotozaki||[Rename]||Rename=名前を変更||renNewNameLabel=テーマの新名前:||renCancelButton=キャンセル(&C)||renRenameButton=名前を変更する(&R)||[Dialog]||saveDialogText=設定が変わってきました。保存するが欲しいですか？||saveDialogTitle=変更設定を保存する通知||deleteDialogText=この行動はこのテーマとテーマのデータ値がを削除します。この行動の後で、元に戻するは出来ませんです。続くを願いますか？||deleteDialogTitle=削除する行動確認||initializeDialogText=この行動は選んでいますのテーマをUTAUの標準配色に戻しています。続くを願いますか？||initializeDialogTitle=標準配色にするの行動確認||overwriteThemeNameDialogText=入れたのテーマ名前は既に存在します。上書きするを願いますか？||overwriteThemeNameDialogTitle=上書き確認";
+                File.WriteAllText("./lang/English.ini", EnglishIni.Replace("||", Environment.NewLine),Encoding.Default);
+                File.WriteAllText("./lang/日本語.ini", EnglishIni.Replace("||", Environment.NewLine),Encoding.Default);
+            }
+            if (!userSettings.KeyExists("ActiveLanguage", "Language"))
+            {
+                userSettings.Write("ActiveLanguage", "English", "Language");
+            }
             // Get all the .ini files in the "lang" folder
             string[] files = Directory.GetFiles(System.IO.Path.Combine(Application.StartupPath, "lang"), "*.ini");
             // Loop through each file
@@ -344,24 +357,28 @@ namespace UTAUColours2023
                 // Add an event handler for the click event
                 item.Click += new EventHandler(LanguageOption_Click);
                 item.Tag = langINI.Read("tag", "Language Settings");
+                
                 // Add the menu item to the languageToolStripMenuItem.DropDownItems collection
                 if (fileName == userSettings.Read("ActiveLanguage","Language"))
                 {
-                    item.Checked = true;
+                    
                     if (userSettings.KeyExists("ActiveLanguage", "Language"))
                     {
+                        item.Checked = true;
                         currentLang = userSettings.Read("ActiveLanguage", "Language");
                     }
                     else
                     {
                         currentLang = "English";
+                        userSettings.Write("ActiveLanguage", currentLang, "Language");
+                        item.Checked = true;
                     }
                     CheckSelectedLanguageOption(languageToolStripMenuItem);
                 }
                 languageToolStripMenuItem.DropDownItems.Add(item);
             }
             userSettings.Write("ActiveLanguage", currentLang, "Language");
-            string filePath = System.IO.Path.Combine(Application.StartupPath, "lang", userSettings.Read("ActiveLanguage", "Language") + ".ini");
+            string filePath = Path.Combine(Application.StartupPath, "lang", userSettings.Read("ActiveLanguage", "Language") + ".ini");
             IniFile langIni = new IniFile(filePath);
             foreach (Control c in this.Controls)
             {
@@ -1108,7 +1125,12 @@ namespace UTAUColours2023
 
             if (saveSettingsFileDialog.ShowDialog() == DialogResult.OK)
             {
-                File.WriteAllLines(saveSettingsFileDialog.FileName, settings);
+                if (saveSettingsFileDialog.OverwritePrompt)
+                {
+                        string settingsBackup = File.ReadAllText(saveSettingsFileDialog.FileName,Encoding.Default);
+                        File.WriteAllText("settings-backup.ini", settingsBackup, Encoding.Default);
+                }
+                File.WriteAllLines(saveSettingsFileDialog.FileName, settings, Encoding.Default);
             }
         }
 
@@ -1483,9 +1505,7 @@ namespace UTAUColours2023
                 {
                     initializeDialogTitle = initializeDialogTitle.Replace(initializeDialogTitle, langINI.Read("initializeDialogTitle", "Dialog"));
                 }
-                menuStrip1.Refresh();
-                
-                File.WriteAllText("debug_currentLang.txt", "The value of currentLang is now" + currentLang + ".");
+                menuStrip1.Refresh();                
                 // Call the CheckSelectedLanguageOption method to make sure only one sub-menu item is selected
                 CheckSelectedLanguageOption(sender);
                 

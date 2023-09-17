@@ -39,7 +39,8 @@ Below is a copy of `English.ini` which you can use as a template to use to add y
 
 If you complete a language `.ini` file, you can feel free to either send to me directly through above contact methods for implementation in future versions!
 
-```[Language Settings]
+```
+[Language Settings]
 languageName=English
 languageTag=en-US
 [UtauColoursMain]

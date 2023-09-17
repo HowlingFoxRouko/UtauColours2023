@@ -1,6 +1,8 @@
-﻿namespace UTAUColours2023
+﻿using MyProg;
+
+namespace UTAUColours2023
 {
-    partial class Form1
+    partial class UtauColoursMain
     {
         /// <summary>
         /// Required designer variable.
@@ -28,30 +30,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.previewPictureBox = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UtauColoursMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openSavedThemesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveThemeListAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveThemesListAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.duplicateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.GenerateSettingsIniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.initializeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.日本語ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.françaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.españolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bahasaIndonesiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.한국어ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.中文ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.themesListBox = new System.Windows.Forms.ListBox();
             this.WhiteKeyTextBox = new System.Windows.Forms.TextBox();
@@ -111,39 +105,30 @@
             this.TitlebarTextTextBox = new System.Windows.Forms.TextBox();
             this.TitlebarTextLabel = new System.Windows.Forms.Label();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.PitchLineDeselectedTextBox = new System.Windows.Forms.TextBox();
             this.PitchLineSelectedTextBox = new System.Windows.Forms.TextBox();
             this.TempoInitialTextBox = new System.Windows.Forms.TextBox();
             this.PitchLineDeselectedButton = new System.Windows.Forms.Button();
             this.PitchLineSelectedButton = new System.Windows.Forms.Button();
             this.TempoIndicatorButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.PitchLineDeselectedLabel = new System.Windows.Forms.Label();
+            this.PitchLineSelectedLabel = new System.Windows.Forms.Label();
             this.InitialTempoLabel = new System.Windows.Forms.Label();
             this.TempoChangeTextBox = new System.Windows.Forms.TextBox();
             this.TempoChangeButton = new System.Windows.Forms.Button();
             this.TempoChangeLabel = new System.Windows.Forms.Label();
             this.PitchLinesCheckBox = new System.Windows.Forms.CheckBox();
-            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.previewPictureBox)).BeginInit();
+            this.generateSettingsIniButton = new System.Windows.Forms.Button();
+            this.previewPictureBox = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.previewPictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // previewPictureBox
-            // 
-            this.previewPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.previewPictureBox.Location = new System.Drawing.Point(314, 240);
-            this.previewPictureBox.Name = "previewPictureBox";
-            this.previewPictureBox.Size = new System.Drawing.Size(489, 241);
-            this.previewPictureBox.TabIndex = 0;
-            this.previewPictureBox.TabStop = false;
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.newNToolStripMenuItem,
+            this.themeToolStripMenuItem,
             this.languageToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -156,7 +141,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openSavedThemesListToolStripMenuItem,
-            this.saveThemeListAsToolStripMenuItem,
+            this.saveThemesListAsToolStripMenuItem,
             this.toolStripMenuItem3,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -170,12 +155,12 @@
             this.openSavedThemesListToolStripMenuItem.Text = "&Open Saved Themes List...";
             this.openSavedThemesListToolStripMenuItem.Click += new System.EventHandler(this.openSavedThemesListToolStripMenuItem_Click);
             // 
-            // saveThemeListAsToolStripMenuItem
+            // saveThemesListAsToolStripMenuItem
             // 
-            this.saveThemeListAsToolStripMenuItem.Name = "saveThemeListAsToolStripMenuItem";
-            this.saveThemeListAsToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
-            this.saveThemeListAsToolStripMenuItem.Text = "&Save Theme List As...";
-            this.saveThemeListAsToolStripMenuItem.Click += new System.EventHandler(this.saveThemeListAsToolStripMenuItem_Click);
+            this.saveThemesListAsToolStripMenuItem.Name = "saveThemesListAsToolStripMenuItem";
+            this.saveThemesListAsToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.saveThemesListAsToolStripMenuItem.Text = "&Save Theme List As...";
+            this.saveThemesListAsToolStripMenuItem.Click += new System.EventHandler(this.saveThemeListAsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -189,123 +174,70 @@
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // newNToolStripMenuItem
+            // themeToolStripMenuItem
             // 
-            this.newNToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.themeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
             this.duplicateToolStripMenuItem,
-            this.GenerateSettingsIniToolStripMenuItem,
             this.renameToolStripMenuItem,
             this.toolStripMenuItem1,
             this.deleteToolStripMenuItem,
             this.toolStripMenuItem2,
             this.initializeToolStripMenuItem});
-            this.newNToolStripMenuItem.Name = "newNToolStripMenuItem";
-            this.newNToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.newNToolStripMenuItem.Text = "&Theme";
+            this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
+            this.themeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.themeToolStripMenuItem.Text = "&Theme";
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newToolStripMenuItem.Text = "&New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // duplicateToolStripMenuItem
             // 
             this.duplicateToolStripMenuItem.Name = "duplicateToolStripMenuItem";
-            this.duplicateToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.duplicateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.duplicateToolStripMenuItem.Text = "D&uplicate";
             this.duplicateToolStripMenuItem.Click += new System.EventHandler(this.duplicateToolStripMenuItem_Click);
             // 
-            // GenerateSettingsIniToolStripMenuItem
+            // renameToolStripMenuItem
             // 
-            this.GenerateSettingsIniToolStripMenuItem.Name = "GenerateSettingsIniToolStripMenuItem";
-            this.GenerateSettingsIniToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.GenerateSettingsIniToolStripMenuItem.Text = "&Generate settings.ini";
-            this.GenerateSettingsIniToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
+            this.renameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.renameToolStripMenuItem.Text = "Rena&me";
+            this.renameToolStripMenuItem.Click += new System.EventHandler(this.renameToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(214, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteToolStripMenuItem.Text = "&Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(214, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
             // 
             // initializeToolStripMenuItem
             // 
             this.initializeToolStripMenuItem.Name = "initializeToolStripMenuItem";
-            this.initializeToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.initializeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.initializeToolStripMenuItem.Text = "&Initialize";
             this.initializeToolStripMenuItem.Click += new System.EventHandler(this.initializeToolStripMenuItem_Click);
             // 
             // languageToolStripMenuItem
             // 
-            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.englishToolStripMenuItem,
-            this.日本語ToolStripMenuItem,
-            this.françaisToolStripMenuItem,
-            this.españolToolStripMenuItem,
-            this.bahasaIndonesiaToolStripMenuItem,
-            this.한국어ToolStripMenuItem,
-            this.中文ToolStripMenuItem});
             this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
             this.languageToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.languageToolStripMenuItem.Text = "&Language";
-            // 
-            // englishToolStripMenuItem
-            // 
-            this.englishToolStripMenuItem.Checked = true;
-            this.englishToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.englishToolStripMenuItem.Text = "English";
-            // 
-            // 日本語ToolStripMenuItem
-            // 
-            this.日本語ToolStripMenuItem.Name = "日本語ToolStripMenuItem";
-            this.日本語ToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.日本語ToolStripMenuItem.Text = "日本語";
-            // 
-            // françaisToolStripMenuItem
-            // 
-            this.françaisToolStripMenuItem.Name = "françaisToolStripMenuItem";
-            this.françaisToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.françaisToolStripMenuItem.Text = "Français";
-            // 
-            // españolToolStripMenuItem
-            // 
-            this.españolToolStripMenuItem.Name = "españolToolStripMenuItem";
-            this.españolToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.españolToolStripMenuItem.Text = "Español";
-            // 
-            // bahasaIndonesiaToolStripMenuItem
-            // 
-            this.bahasaIndonesiaToolStripMenuItem.Name = "bahasaIndonesiaToolStripMenuItem";
-            this.bahasaIndonesiaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.bahasaIndonesiaToolStripMenuItem.Text = "Bahasa Indonesia";
-            // 
-            // 한국어ToolStripMenuItem
-            // 
-            this.한국어ToolStripMenuItem.Name = "한국어ToolStripMenuItem";
-            this.한국어ToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.한국어ToolStripMenuItem.Text = "한국어";
-            // 
-            // 中文ToolStripMenuItem
-            // 
-            this.中文ToolStripMenuItem.Name = "中文ToolStripMenuItem";
-            this.中文ToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.中文ToolStripMenuItem.Text = "中文";
             // 
             // aboutToolStripMenuItem
             // 
@@ -329,6 +261,7 @@
             this.WhiteKeyTextBox.Name = "WhiteKeyTextBox";
             this.WhiteKeyTextBox.Size = new System.Drawing.Size(73, 20);
             this.WhiteKeyTextBox.TabIndex = 1;
+            this.WhiteKeyTextBox.Leave += new System.EventHandler(this.WhiteKeyTextBox_Leave);
             // 
             // WhiteKeyButton
             // 
@@ -356,6 +289,7 @@
             this.BlackKeyTextBox.Name = "BlackKeyTextBox";
             this.BlackKeyTextBox.Size = new System.Drawing.Size(73, 20);
             this.BlackKeyTextBox.TabIndex = 3;
+            this.BlackKeyTextBox.Leave += new System.EventHandler(this.BlackKeyTextBox_Leave);
             // 
             // BlackKeyButton
             // 
@@ -383,6 +317,7 @@
             this.PianoRollKeyWhiteTextBox.Name = "PianoRollKeyWhiteTextBox";
             this.PianoRollKeyWhiteTextBox.Size = new System.Drawing.Size(73, 20);
             this.PianoRollKeyWhiteTextBox.TabIndex = 5;
+            this.PianoRollKeyWhiteTextBox.Leave += new System.EventHandler(this.PianoRollKeyWhiteTextBox_Leave);
             // 
             // PianoRollWhiteButton
             // 
@@ -410,6 +345,7 @@
             this.PianoRollKeyBlackTextBox.Name = "PianoRollKeyBlackTextBox";
             this.PianoRollKeyBlackTextBox.Size = new System.Drawing.Size(73, 20);
             this.PianoRollKeyBlackTextBox.TabIndex = 7;
+            this.PianoRollKeyBlackTextBox.Leave += new System.EventHandler(this.PianoRollKeyBlackTextBox_Leave);
             // 
             // PianoRollBlackButton
             // 
@@ -437,6 +373,7 @@
             this.MeasureLineTextBox.Name = "MeasureLineTextBox";
             this.MeasureLineTextBox.Size = new System.Drawing.Size(73, 20);
             this.MeasureLineTextBox.TabIndex = 9;
+            this.MeasureLineTextBox.Leave += new System.EventHandler(this.MeasureLineTextBox_Leave);
             // 
             // MeasureLineButton
             // 
@@ -464,6 +401,7 @@
             this.QuarterNoteLineTextBox.Name = "QuarterNoteLineTextBox";
             this.QuarterNoteLineTextBox.Size = new System.Drawing.Size(73, 20);
             this.QuarterNoteLineTextBox.TabIndex = 11;
+            this.QuarterNoteLineTextBox.Leave += new System.EventHandler(this.QuarterNoteLineTextBox_Leave);
             // 
             // QuarterNoteLineButton
             // 
@@ -491,6 +429,7 @@
             this.MeasureBackgroundTextBox.Name = "MeasureBackgroundTextBox";
             this.MeasureBackgroundTextBox.Size = new System.Drawing.Size(73, 20);
             this.MeasureBackgroundTextBox.TabIndex = 15;
+            this.MeasureBackgroundTextBox.Leave += new System.EventHandler(this.MeasureBackgroundTextBox_Leave);
             // 
             // MeasureBackgrounButton
             // 
@@ -518,6 +457,7 @@
             this.MeasureOctaveTextTextBox.Name = "MeasureOctaveTextTextBox";
             this.MeasureOctaveTextTextBox.Size = new System.Drawing.Size(73, 20);
             this.MeasureOctaveTextTextBox.TabIndex = 17;
+            this.MeasureOctaveTextTextBox.Leave += new System.EventHandler(this.MeasureOctaveTextTextBox_Leave);
             // 
             // MeasureOctaveTextButton
             // 
@@ -545,6 +485,7 @@
             this.PianoRollNoteDividerTextBox.Name = "PianoRollNoteDividerTextBox";
             this.PianoRollNoteDividerTextBox.Size = new System.Drawing.Size(73, 20);
             this.PianoRollNoteDividerTextBox.TabIndex = 19;
+            this.PianoRollNoteDividerTextBox.Leave += new System.EventHandler(this.PianoRollNoteDividerTextBox_Leave);
             // 
             // PianoRollNoteDividerButton
             // 
@@ -572,6 +513,7 @@
             this.NoteDeselectedTextBox.Name = "NoteDeselectedTextBox";
             this.NoteDeselectedTextBox.Size = new System.Drawing.Size(73, 20);
             this.NoteDeselectedTextBox.TabIndex = 21;
+            this.NoteDeselectedTextBox.Leave += new System.EventHandler(this.NoteDeselectedTextBox_Leave);
             // 
             // NoteDeselectedButton
             // 
@@ -599,6 +541,7 @@
             this.NoteFirstSelectedTextBox.Name = "NoteFirstSelectedTextBox";
             this.NoteFirstSelectedTextBox.Size = new System.Drawing.Size(73, 20);
             this.NoteFirstSelectedTextBox.TabIndex = 23;
+            this.NoteFirstSelectedTextBox.Leave += new System.EventHandler(this.NoteFirstSelectedTextBox_Leave);
             // 
             // NoteFirstSelectedButton
             // 
@@ -626,6 +569,7 @@
             this.NoteSelectedTextBox.Name = "NoteSelectedTextBox";
             this.NoteSelectedTextBox.Size = new System.Drawing.Size(73, 20);
             this.NoteSelectedTextBox.TabIndex = 25;
+            this.NoteSelectedTextBox.Layout += new System.Windows.Forms.LayoutEventHandler(this.NoteSelectedTextBox_Layout);
             // 
             // NoteSelectedButton
             // 
@@ -653,6 +597,7 @@
             this.NoteFontDeselectedTextBox.Name = "NoteFontDeselectedTextBox";
             this.NoteFontDeselectedTextBox.Size = new System.Drawing.Size(73, 20);
             this.NoteFontDeselectedTextBox.TabIndex = 29;
+            this.NoteFontDeselectedTextBox.Leave += new System.EventHandler(this.NoteFontDeselectedTextBox_Leave);
             // 
             // NoteFontDeselectedButton
             // 
@@ -680,6 +625,7 @@
             this.NoteFontFirstSelectedTextBox.Name = "NoteFontFirstSelectedTextBox";
             this.NoteFontFirstSelectedTextBox.Size = new System.Drawing.Size(73, 20);
             this.NoteFontFirstSelectedTextBox.TabIndex = 31;
+            this.NoteFontFirstSelectedTextBox.Leave += new System.EventHandler(this.NoteFontFirstSelectedTextBox_Leave);
             // 
             // NoteFontFirstSelectedButton
             // 
@@ -707,6 +653,7 @@
             this.NoteFontSelectedTextBox.Name = "NoteFontSelectedTextBox";
             this.NoteFontSelectedTextBox.Size = new System.Drawing.Size(73, 20);
             this.NoteFontSelectedTextBox.TabIndex = 33;
+            this.NoteFontSelectedTextBox.Leave += new System.EventHandler(this.NoteFontSelectedTextBox_Leave);
             // 
             // NoteFontSelectedButton
             // 
@@ -734,6 +681,7 @@
             this.RestDeselectedTextBox.Name = "RestDeselectedTextBox";
             this.RestDeselectedTextBox.Size = new System.Drawing.Size(73, 20);
             this.RestDeselectedTextBox.TabIndex = 35;
+            this.RestDeselectedTextBox.Leave += new System.EventHandler(this.RestDeselectedTextBox_Leave);
             // 
             // RestFirstSelectedTextBox
             // 
@@ -741,6 +689,7 @@
             this.RestFirstSelectedTextBox.Name = "RestFirstSelectedTextBox";
             this.RestFirstSelectedTextBox.Size = new System.Drawing.Size(73, 20);
             this.RestFirstSelectedTextBox.TabIndex = 37;
+            this.RestFirstSelectedTextBox.Leave += new System.EventHandler(this.RestFirstSelectedTextBox_Leave);
             // 
             // RestSelectedTextBox
             // 
@@ -748,6 +697,7 @@
             this.RestSelectedTextBox.Name = "RestSelectedTextBox";
             this.RestSelectedTextBox.Size = new System.Drawing.Size(73, 20);
             this.RestSelectedTextBox.TabIndex = 39;
+            this.RestSelectedTextBox.Leave += new System.EventHandler(this.RestSelectedTextBox_Leave);
             // 
             // RestDeselectedButton
             // 
@@ -838,6 +788,7 @@
             this.PitchLineDeselectedTextBox.Name = "PitchLineDeselectedTextBox";
             this.PitchLineDeselectedTextBox.Size = new System.Drawing.Size(73, 20);
             this.PitchLineDeselectedTextBox.TabIndex = 27;
+            this.PitchLineDeselectedTextBox.Leave += new System.EventHandler(this.PitchLineDeselectedTextBox_Leave);
             // 
             // PitchLineSelectedTextBox
             // 
@@ -845,6 +796,7 @@
             this.PitchLineSelectedTextBox.Name = "PitchLineSelectedTextBox";
             this.PitchLineSelectedTextBox.Size = new System.Drawing.Size(73, 20);
             this.PitchLineSelectedTextBox.TabIndex = 41;
+            this.PitchLineSelectedTextBox.Leave += new System.EventHandler(this.PitchLineSelectedTextBox_Leave);
             // 
             // TempoInitialTextBox
             // 
@@ -852,6 +804,7 @@
             this.TempoInitialTextBox.Name = "TempoInitialTextBox";
             this.TempoInitialTextBox.Size = new System.Drawing.Size(73, 20);
             this.TempoInitialTextBox.TabIndex = 13;
+            this.TempoInitialTextBox.Leave += new System.EventHandler(this.TempoInitialTextBox_Leave);
             // 
             // PitchLineDeselectedButton
             // 
@@ -883,25 +836,25 @@
             this.TempoIndicatorButton.UseVisualStyleBackColor = true;
             this.TempoIndicatorButton.Click += new System.EventHandler(this.TempoIndicatorButton_Click);
             // 
-            // label1
+            // PitchLineDeselectedLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(272, 186);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Pitch Line Colour (Deselected)";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.PitchLineDeselectedLabel.AutoSize = true;
+            this.PitchLineDeselectedLabel.Location = new System.Drawing.Point(272, 186);
+            this.PitchLineDeselectedLabel.Name = "PitchLineDeselectedLabel";
+            this.PitchLineDeselectedLabel.Size = new System.Drawing.Size(150, 13);
+            this.PitchLineDeselectedLabel.TabIndex = 5;
+            this.PitchLineDeselectedLabel.Text = "Pitch Line Colour (Deselected)";
+            this.PitchLineDeselectedLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label2
+            // PitchLineSelectedLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(534, 186);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Pitch Line Colour (Selection)";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.PitchLineSelectedLabel.AutoSize = true;
+            this.PitchLineSelectedLabel.Location = new System.Drawing.Point(534, 186);
+            this.PitchLineSelectedLabel.Name = "PitchLineSelectedLabel";
+            this.PitchLineSelectedLabel.Size = new System.Drawing.Size(140, 13);
+            this.PitchLineSelectedLabel.TabIndex = 5;
+            this.PitchLineSelectedLabel.Text = "Pitch Line Colour (Selection)";
+            this.PitchLineSelectedLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // InitialTempoLabel
             // 
@@ -919,6 +872,7 @@
             this.TempoChangeTextBox.Name = "TempoChangeTextBox";
             this.TempoChangeTextBox.Size = new System.Drawing.Size(73, 20);
             this.TempoChangeTextBox.TabIndex = 43;
+            this.TempoChangeTextBox.Leave += new System.EventHandler(this.TempoChangeTextBox_Leave);
             // 
             // TempoChangeButton
             // 
@@ -950,18 +904,33 @@
             this.PitchLinesCheckBox.Text = "Show Pitch Lines";
             this.PitchLinesCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.PitchLinesCheckBox.UseVisualStyleBackColor = true;
+            this.PitchLinesCheckBox.CheckedChanged += new System.EventHandler(this.PitchLinesCheckBox_CheckedChanged);
             // 
-            // renameToolStripMenuItem
+            // generateSettingsIniButton
             // 
-            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
-            this.renameToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.renameToolStripMenuItem.Text = "Rena&me";
+            this.generateSettingsIniButton.Location = new System.Drawing.Point(619, 488);
+            this.generateSettingsIniButton.Name = "generateSettingsIniButton";
+            this.generateSettingsIniButton.Size = new System.Drawing.Size(184, 23);
+            this.generateSettingsIniButton.TabIndex = 47;
+            this.generateSettingsIniButton.Text = "&Generate UTAU settings.ini";
+            this.generateSettingsIniButton.UseVisualStyleBackColor = true;
+            this.generateSettingsIniButton.Click += new System.EventHandler(this.generateSettingsIniButton_Click);
             // 
-            // Form1
+            // previewPictureBox
+            // 
+            this.previewPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.previewPictureBox.Location = new System.Drawing.Point(314, 240);
+            this.previewPictureBox.Name = "previewPictureBox";
+            this.previewPictureBox.Size = new System.Drawing.Size(489, 241);
+            this.previewPictureBox.TabIndex = 0;
+            this.previewPictureBox.TabStop = false;
+            // 
+            // UtauColoursMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 521);
+            this.Controls.Add(this.generateSettingsIniButton);
             this.Controls.Add(this.PitchLinesCheckBox);
             this.Controls.Add(this.TitlebarTextLabel);
             this.Controls.Add(this.TempoChangeLabel);
@@ -971,9 +940,9 @@
             this.Controls.Add(this.PianoRollKeyBlackLabel);
             this.Controls.Add(this.PianoRollKeyWhiteLabel);
             this.Controls.Add(this.BlackKeyLabel);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.PitchLineSelectedLabel);
             this.Controls.Add(this.RestSelectedLabel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.PitchLineDeselectedLabel);
             this.Controls.Add(this.NoteSelectedLabel);
             this.Controls.Add(this.RestFirstOfSelectedLabel);
             this.Controls.Add(this.NoteFirstSelectedLabel);
@@ -1036,12 +1005,13 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "UtauColoursMain";
             this.Text = "UTAU Colours 2023";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.previewPictureBox)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.previewPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1051,31 +1021,23 @@
 
         private System.Windows.Forms.PictureBox previewPictureBox;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem newNToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem themeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem duplicateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem GenerateSettingsIniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem initializeToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem openSavedThemesListToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveThemeListAsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveThemesListAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ListBox themesListBox;
         private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 日本語ToolStripMenuItem;
         private System.Windows.Forms.TextBox WhiteKeyTextBox;
         private System.Windows.Forms.Button WhiteKeyButton;
         private System.Windows.Forms.Label WhiteKeyLabel;
-        private System.Windows.Forms.ToolStripMenuItem françaisToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem españolToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bahasaIndonesiaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 한국어ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 中文ToolStripMenuItem;
         private System.Windows.Forms.TextBox BlackKeyTextBox;
         private System.Windows.Forms.Button BlackKeyButton;
         private System.Windows.Forms.Label BlackKeyLabel;
@@ -1131,21 +1093,21 @@
         private System.Windows.Forms.Label TitlebarTextLabel;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ColorDialog colorDialog;
-        private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.TextBox PitchLineDeselectedTextBox;
         private System.Windows.Forms.TextBox PitchLineSelectedTextBox;
         private System.Windows.Forms.TextBox TempoInitialTextBox;
         private System.Windows.Forms.Button PitchLineDeselectedButton;
         private System.Windows.Forms.Button PitchLineSelectedButton;
         private System.Windows.Forms.Button TempoIndicatorButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label PitchLineDeselectedLabel;
+        private System.Windows.Forms.Label PitchLineSelectedLabel;
         private System.Windows.Forms.Label InitialTempoLabel;
         private System.Windows.Forms.TextBox TempoChangeTextBox;
         private System.Windows.Forms.Button TempoChangeButton;
         private System.Windows.Forms.Label TempoChangeLabel;
         private System.Windows.Forms.CheckBox PitchLinesCheckBox;
         private System.Windows.Forms.ToolStripMenuItem renameToolStripMenuItem;
+        private System.Windows.Forms.Button generateSettingsIniButton;
     }
 }
 
